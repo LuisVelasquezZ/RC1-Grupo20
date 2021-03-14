@@ -1,2 +1,10 @@
-# RC1-Grupo20
-Repositorio Redes de Computadoras 1.
+# Redes de Computadoras 1
+
+## __Integrantes__
+**201801237**	JOSÉ RAFAEL MORENTE GONZÁLEZ
+
+**201801262**	JUAN JOSÉ RAMOS CAMPOS
+
+**201807228**	GERSON ALEJANDRO BELTETÓN URBINA
+
+**201807266**	LUIS FERNANDO VELÁSQUEZ ZACARÍAS
