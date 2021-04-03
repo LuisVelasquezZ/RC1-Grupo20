@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  networkapi:
+    container_name: mongodb
+    image: mongo
+    ports: 
+      - "27017:27017"
+  servernode: 
+    container_name: practica2
+    restart: always
+    build: ./back-proyecto
+    ports: 
+      - "80:3000"
+    links:
+      - networkapi
+    depends_on:
+      - networkapi

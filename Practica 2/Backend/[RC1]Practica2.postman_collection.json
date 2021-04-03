@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "6ef09cde-2ca2-48b6-b411-bf9b7e1729e9",
+		"name": "[RC1]Practica2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Libros",
+			"item": [
+				{
+					"name": "GET ALL Libros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/libros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"libros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Libros",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ISBN\": \"123456789\",\n    \"titulo\": \"Harry Potter\",\n    \"autor\": \"J. K. Rowling\",\n    \"precio\": 100.00,\n    \"cantidad\": 200\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/libros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"libros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET SINGLE Libros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/libros/6067dea62586b9001948317d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"libros",
+								"6067dea62586b9001948317d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATED LIbros",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ISBN\": \"123456789\",\n    \"titulo\": \"Harry Potter y el Principe Mestizo\",\n    \"autor\": \"J. K. Rowling\",\n    \"precio\": 100.00,\n    \"cantidad\": 200\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/libros/6067dea62586b9001948317d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"libros",
+								"6067dea62586b9001948317d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Libros",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/libros/6067dea62586b9001948317d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"libros",
+								"6067dea62586b9001948317d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
