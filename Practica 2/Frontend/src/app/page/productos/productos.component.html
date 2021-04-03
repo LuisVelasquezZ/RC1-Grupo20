@@ -1,0 +1,138 @@
+<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h3 style="color:#7F0101;">Productos</h3>
+    </div>
+    <div class="col-md-7 align-self-center">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="javascript:void(0)">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Productos</li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-2 col-md-4">
+        <button type="button"  data-toggle="modal" data-target="#modalFormDataAdd" class="btn btn-primary btn-block text-uppercase btn-rounded ">Agregar</button>
+    </div>
+</div>
+<br>
+
+<!-- ============================================================== -->
+<!--                         PRODUCTOS                              -->
+<!-- ============================================================== -->
+<div class="row el-element-overlay">
+    <div class="col-lg-3 col-md-6" *ngFor="let item of data">
+        <div class="card">
+            <div class="el-card-item">
+                <div class="el-card-avatar el-overlay-1"> <img src="../../../assets/image/libro.png" alt="user" />
+                    <div class="el-overlay">
+                        <ul class="el-info">
+                            <a class="btn default btn-outline image-popup-vertical-fit" href="../../../assets/image/libro.png"></a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="el-card-content">
+                    <h3 class="box-title">{{item.titulo}}</h3> 
+                    <h5 class="box-title">{{item.autor}}</h5> 
+                    <h6 class="box-title">Q {{ item.precio | number : '1.2-2'}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!--                         PRODUCTOS                              -->
+<!-- ============================================================== -->
+
+<!-- ============================================================== -->
+<!--                     MODAL RESPONSIVE AGREGAR                   -->
+<!-- ============================================================== -->
+<div id="modalFormDataAdd" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true" style="display: none;">
+    <form class="modal-dialog modal-lg" [formGroup]="formData" (ngSubmit)="saveChanges()">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Agregar Producto</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">ISBN</label>
+                            <input type="text" class="form-control" id="recipient-name" formControlName="ISBN"
+                                name="ISBN">
+                            <div *ngIf="ISBN.invalid && (ISBN.dirty || ISBN.touched) && ISBN">
+                                <div class="alert alert-danger" role="alert" *ngIf="ISBN.errors.required">
+                                    El ISBN es requerido
+                                </div>
+                                <div class="alert alert-warning" role="alert" *ngIf="ISBN.errors.maxlength">
+                                    La longitud maxima es de 255 caracteres
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Titulo</label>
+                            <input type="text" class="form-control" id="recipient-name" formControlName="titulo"
+                                name="titulo">
+                            <div *ngIf="titulo.invalid && (titulo.dirty || titulo.touched) && titulo">
+                                <div class="alert alert-danger" role="alert" *ngIf="titulo.errors.required">
+                                    El titulo es requerido
+                                </div>
+                                <div class="alert alert-warning" role="alert" *ngIf="titulo.errors.maxlength">
+                                    La longitud maxima es de 255 caracteres
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="control-label">Autor</label>
+                            <input type="text" class="form-control" id="recipient-name" formControlName="autor"
+                                name="autor">
+                            <div *ngIf="autor.invalid && (autor.dirty || autor.touched) && autor">
+                                <div class="alert alert-danger" role="alert" *ngIf="autor.errors.required">
+                                    El autor es requerido
+                                </div>
+                                <div class="alert alert-warning" role="alert" *ngIf="autor.errors.maxlength">
+                                    La longitud maxima es de 255 caracteres
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">Cantidad</label>
+                            <input type="number" class="form-control" id="recipient-name" formControlName="cantidad"
+                                name="cantidad">
+                            <div *ngIf="cantidad.invalid && (cantidad.dirty || cantidad.touched) && cantidad">
+                                <div class="alert alert-danger" role="alert" *ngIf="cantidad.errors.required">
+                                    La cantidad es requerida
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="control-label">Precio</label>
+                            <input type="number" class="form-control" id="recipient-name" formControlName="precio"
+                                name="precio">
+                            <div *ngIf="precio.invalid && (precio.dirty || precio.touched) && precio">
+                                <div class="alert alert-danger" role="alert" *ngIf="precio.errors.required">
+                                    El precio es requerido
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary text-uppercase btn-rounded"
+                    data-dismiss="modal">Cerrar</button>
+                <button type="submit" [disabled]="!formData.valid"
+                    class="btn btn-primary text-uppercase btn-rounded">Guardar Cambios</button>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- ============================================================== -->
+<!--                     MODAL RESPONSIVE AGREGAR                   -->
+<!-- ============================================================== -->
