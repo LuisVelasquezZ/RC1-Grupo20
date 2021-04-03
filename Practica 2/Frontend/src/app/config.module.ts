@@ -1,3 +1,3 @@
 export const path:any = { 
-    path:"http://192.168.1.162/api/",
+    path:"http://192.168.120.133/api/",
 }
