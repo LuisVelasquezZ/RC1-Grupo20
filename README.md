@@ -27,3 +27,4 @@
 1. (config) vtp domain nombre_dominio
 2. (config) vtp password password_dominio
 3. (config) vtp mode client/server, seleccionar si el switch funcionara como servidor o cliente
+4. (config) spanning-tree vlan # root primary para indicar que el switch que va a funcionar como servidor va a ser la ruta primaria
